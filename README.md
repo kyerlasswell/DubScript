@@ -1,7 +1,7 @@
 # DubScript
 Still Needed:
 
-Logging for fail states, including file overwrites
+Logging for fail states, including file overwrites. Also add timestamp to log file name
 
 Relative paths
 
