@@ -1,5 +1,4 @@
 <#
-    Kyer Lasswell
     DubScript log generator. Outputs to "DubScript/logs/dslog[date].csv"
 #>
 function Write-Log {
@@ -19,5 +18,5 @@ function Write-Log {
         Time = (Get-Date -f g)
         Message = $Message
         Severity = $Severity
-    } | Export-Csv -Path "C:\Users\Music Director\Documents\DubScript\logs\dslog$((Get-Date).ToString("yyyyMMdd")).csv" -Append -NoTypeInformation
+    } | Export-Csv -Path "C:\Users\Music Director\DubScript\logs\dslog$((Get-Date).ToString("yyyyMMdd")).csv" -Append -NoTypeInformation
 }
