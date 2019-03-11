@@ -34,7 +34,11 @@ Right click DubScript.ps1 > Run with PowerShell
 
 ## Logging
 
-Logging is pretty basic. It only really exists to prove that `somefile.mp3` was moved to the production folder and converted to `somefile.wav` on the off chance someone asks. The log will show you what files get overwritten since multiple files often want the same name, so if there is a missing spot somewhere, you can see if it was overwritten. and fix it manually if necessary.
+Logging is powered by the Write-Log.ps1 cmdlet. Write-Log.ps1 has to be in the same folder as DubScript.ps1 in order for it to work.
+
+As of right now, logging is pretty basic. It only really exists to prove that `originalfile.mp3` was moved to the production folder and converted to `newfile.wav` on the off chance someone asks. 
+
+The log will show you what files get overwritten since multiple files often want the same name, so if there is a missing spot somewhere, you can see if it was overwritten. and fix it manually if necessary.
 
 ## Future Plans
 
