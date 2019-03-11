@@ -1,17 +1,12 @@
 <# 
-    DubScript v1.0
-    Author: Kyer Lasswell
-    Phone:  (660) 351-3452
-    Email:  kyerdlasswell@gmail.com
-
     Input a .csv into DubScript and it will automatically rename the original files,
     move them to the proper folder, convert them to .wav
 #>
 
 . "$PSScriptRoot\Write-Log.ps1" #Loads Write-Log cmdlet (which should be in the same folder as this script)
-$csv = Import-Csv "C:\Users\Music Director\Documents\DubScript\dublist\dublist.csv"
-$original_path = Get-ChildItem "C:\Users\Music Director\Documents\mstest" -Recurse -File
-$destination_path = "C:\Users\Music Director\Documents\testspots\"
+$csv = Import-Csv "C:\Users\Music Director\DubScript\dublist\dublist.csv"
+$original_path = Get-ChildItem "P:\Media Shooter\" -Recurse -File
+$destination_path = "S:\Spots\"
 
 # For each entry in the dublist
 foreach($line in $csv) { 
