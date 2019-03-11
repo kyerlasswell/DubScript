@@ -7,7 +7,7 @@ Note that the dublist often calls for naming multiple unique files from the dump
 
 ## Requirements
 
-* [FFmpeg](https://www.ffmpeg.org/) for file conversion.
+[FFmpeg](https://www.ffmpeg.org/) for file conversion
 
 ## Setup dublist.csv
 
@@ -30,7 +30,7 @@ Note that the dublist often calls for naming multiple unique files from the dump
 
 ## Execution
 
-* Right click DubScript.ps1 > Run with PowerShell
+Right click DubScript.ps1 > Run with PowerShell
 
 ## Logging
 
