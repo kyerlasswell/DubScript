@@ -11,7 +11,7 @@ Note that the dublist often calls for naming multiple unique files from the dump
 
 ## Setup dublist.csv
 
-1. Convert the weekly dublist.pdf to .xlsx one way or another. [This](pdftoexcel.com) is a good site to use.
+1. Convert the weekly dublist.pdf to .xlsx one way or another. [This](https://www.pdftoexcel.com) is a good site to use.
 
 2. Remove all text that isn't in the `Media #` or `ISCI` columns, including the column headers.
 
