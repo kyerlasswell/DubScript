@@ -25,7 +25,7 @@ Note that the dublist often calls for naming multiple unique files from the dump
 
 7. Edit DubScript.ps1 to make sure `$csv` (dublist.csv), `$original_path` (dump folder), and `$destination_path` (production folder) are pointing to the right places.
 
-![](examples\vscode_example.png)
+![](examples/vscode_example.png)
 <img style="float: right;" src="examples\excel_example.png">
 
 ## Execution
