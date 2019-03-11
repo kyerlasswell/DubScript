@@ -1,5 +1,5 @@
 <# 
-    Input a .csv into DubScript and it will automatically rename the original files,
+    Import a .csv into DubScript and it will automatically rename the original files,
     move them to the proper folder, convert them to .wav
 #>
 
@@ -30,6 +30,6 @@ foreach($line in $csv) {
 }
 # If running in the console, wait for input before closing.
 if ($Host.Name -eq "ConsoleHost") {
-    Write-Host "Press any key to exit..."
+    Write-Host "Complete. Press any key to exit."
     $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyUp") > $null
 }
