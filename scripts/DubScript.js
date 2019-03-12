@@ -2,6 +2,7 @@ const ffmpeg = require('ffmpeg-static');
 const exec = require('child_process').exec;
 const fs = require('fs');
 const csv = require('csv');
+const pdfreader = require('pdfreader');
 
 const inputDir = "./test/Dump";
 const outputDir = "./test/Production";
@@ -11,13 +12,13 @@ if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir);
 }
 
-readCSV();
+getData('./dublist/dublist.pdf');
 
-function convertFiles(csvFile) {
-    csvFile.forEach((row) => {
+function convertFiles(data) {
+    data.forEach((row) => {
         // Get file names
-        const originalFile = row[1];
-        const newFile = row[0];
+        const originalFile = row.original;
+        const newFile = row.new;
 
         // Check if original file exists
         if (!fs.existsSync(inputDir + '/' + originalFile + ".mp3")) {
@@ -36,6 +37,31 @@ function convertFiles(csvFile) {
             }
         });
     });
+}
+
+// Get data from the pdf
+function getData(fileName) {
+    const data = [];
+    new pdfreader.PdfReader().parseFileItems(fileName, function (err, item) {
+        if (err)
+            console.log(err);
+        else if (!item)
+            parseData(data);
+        else if (item.text)
+            data.push(item.text);
+    });
+}
+
+// Convert the data into an array of objects
+function parseData(data) {
+    const dubs = [];
+    data.forEach((d, i) => {
+        if (d.startsWith("NET")) {
+            dubs.push({ new: d.slice(3), original: data[i + 1] });
+        }
+    });
+
+    convertFiles(dubs);
 }
 
 function readCSV() {
