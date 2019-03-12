@@ -46,6 +46,18 @@ The log will show you what files get overwritten since multiple files often want
 
 DubScript will take the `oldname.mp3` files from `test\Dump` and copy them to the `test\Production` as `newname.wav`. Delete all contents of the `test\Production` folder for each test.
 
+## JavaScript Usage
+
+### Requirements
+* Node.js
+```
+// Install dependencies
+npm install
+
+// Run the script
+npm start
+```
+
 ## Future Plans
 
 * Automate the conversion of .pdf to .csv and as much formatting as possible.

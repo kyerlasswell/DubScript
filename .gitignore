@@ -1,0 +1,5 @@
+*.wav
+logs
+
+### Node ###
+node_modules
