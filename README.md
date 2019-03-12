@@ -42,6 +42,10 @@ As of right now, logging is pretty basic. It only really exists to prove that `o
 
 The log will show you what files get overwritten since multiple files often want the same name, so if there is a missing spot somewhere, you can see if it was overwritten. and fix it manually if necessary.
 
+## Testing
+
+DubScript will take the `oldname.mp3` files from `test\Dump` and copy them to the `test\Production` as `newname.wav`. Delete all contents of the `test\Production` folder for each test.
+
 ## Future Plans
 
 * Automate the conversion of .pdf to .csv and as much formatting as possible.
