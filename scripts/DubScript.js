@@ -1,31 +1,46 @@
-var ffmpeg = require('ffmpeg-static');
-var exec = require('child_process').exec;
-var fs = require('fs');
+const ffmpeg = require('ffmpeg-static');
+const exec = require('child_process').exec;
+const fs = require('fs');
+const csv = require('csv');
 
-var inputDir = "./test/Dump";
-var outputDir = "./test/Production";
+const inputDir = "./test/Dump";
+const outputDir = "./test/Production";
 
-convertFiles();
+readCSV();
 
-function convertFiles() {
-    // Loop through all the files in the temp directory
-    fs.readdir(inputDir, (err, files) => {
-        files.forEach(file => {
-            // Get file name without extension
-            const dotPos = file.indexOf('.');
-            const fileName = file.slice(0, dotPos);
+function convertFiles(csvFile) {
+    csvFile.forEach((row) => {
+        // Get file names
+        const originalFile = row[1];
+        const newFile = row[0];
 
-            // Command to convert from mp3 to wav
-            const cmd = ffmpeg.path + " -y -i " + inputDir + "/" + file + " " + outputDir + "/" + fileName + ".wav";
+        // Check if original file exists
+        if (!fs.existsSync(inputDir + '/' + originalFile + ".mp3")) {
+            return;
+        }
 
-            // Execute the command
-            exec(cmd, (err, stdout, stderr) => {
-                if (err) {
-                    console.log('Error:' + stderr);
-                } else {
-                    console.log("Converted " + file + " to " + fileName + ".wav");
-                }
-            });
+        // Command to convert from mp3 to wav
+        const cmd = ffmpeg.path + " -y -i " + inputDir + "/" + originalFile + ".mp3 " + outputDir + "/" + newFile + ".wav";
+
+        // Execute the command
+        exec(cmd, (err, stdout, stderr) => {
+            if (err) {
+                console.log('Error:' + stderr);
+            } else {
+                console.log("Converted " + originalFile + ".mp3 to " + newFile + ".wav");
+            }
         });
     });
+}
+
+function readCSV() {
+    const output = [];
+    fs.createReadStream('./dublist/dublist.csv')
+        .pipe(csv.parse())
+        .on('data', (row) => {
+            output.push(row);
+        })
+        .on('end', () => {
+            convertFiles(output);
+        });
 }

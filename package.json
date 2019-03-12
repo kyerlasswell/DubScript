@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jmbockhorst/DubScript#readme",
   "dependencies": {
+    "csv": "^5.1.1",
     "ffmpeg-static": "^2.4.0"
   }
 }
