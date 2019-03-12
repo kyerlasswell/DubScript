@@ -18,5 +18,5 @@ function Write-Log {
         Time = (Get-Date -f g)
         Message = $Message
         Severity = $Severity
-    } | Export-Csv -Path "C:\Users\Music Director\DubScript\logs\dslog$((Get-Date).ToString("yyyyMMdd")).csv" -Append -NoTypeInformation
+    } | Export-Csv -Path "logs\dslog$((Get-Date).ToString("yyyyMMdd")).csv" -Append -NoTypeInformation
 }

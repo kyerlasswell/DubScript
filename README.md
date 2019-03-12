@@ -7,7 +7,9 @@ Note that the dublist often calls for naming multiple unique files from the dump
 
 ## Requirements
 
-[FFmpeg](https://www.ffmpeg.org/) for file conversion
+1. Download [FFmpeg](https://ffmpeg.zeranoe.com/builds/) for file conversion.
+
+2. Update your PATH environment variable to include the path to ffmpeg\bin (e.g. C:\Program Files\ffmpeg\bin)
 
 ## Setup dublist.csv
 
@@ -25,8 +27,8 @@ Note that the dublist often calls for naming multiple unique files from the dump
 
 7. Edit DubScript.ps1 to make sure `$csv` (dublist.csv), `$original_path` (dump folder), and `$destination_path` (production folder) are pointing to the right places.
 
-![](examples/vscode_example.png)
-<img style="float: right;" src="examples\excel_example.png">
+![](test/vscode_example.png)
+<img style="float: right;" src="test\excel_example.png">
 
 ## Execution
 
