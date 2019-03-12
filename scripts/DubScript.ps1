@@ -4,9 +4,9 @@
 #>
 
 . "$PSScriptRoot\Write-Log.ps1" #Loads Write-Log cmdlet (which should be in the same folder as this script)
-$csv = Import-Csv "C:\Users\Music Director\DubScript\dublist\dublist.csv"
-$original_path = Get-ChildItem "P:\Media Shooter\" -Recurse -File
-$destination_path = "S:\Spots\"
+$csv = Import-Csv "dublist\dublist.csv"
+$original_path = Get-ChildItem "test\dump" -Recurse -File
+$destination_path = "test\Production\"
 
 # For each entry in the dublist
 foreach($line in $csv) { 
@@ -30,6 +30,6 @@ foreach($line in $csv) {
 }
 # If running in the console, wait for input before closing.
 if ($Host.Name -eq "ConsoleHost") {
-    Write-Host "Complete. Press any key to exit."
+    Write-Host "Complete."
     $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyUp") > $null
 }
