@@ -10,14 +10,14 @@ $destination_path = "test\Production\"
 
 # For each entry in the dublist
 foreach($line in $csv) { 
-    # For every file in the Media Shooter folder
+    # For every file in the Dump folder
     foreach($file in $original_path) { 
         $current_name = $file.FullName
         $moved_original = $destination_path + $line.new + $file.Extension
         $converted_name = $destination_path + $line.new + ".wav"
         
         # Check if a given filename matches dublist entry.
-        # If there is a match, copy the file to the Spots 
+        # If there is a match, copy the file to the Production 
         # folder with the new name from the dublist.
         # Convert the copied file to .wav and delete the .mp3 version
         if(($current_name -like "*"+$line.current+$file.Extension)) {
