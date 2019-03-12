@@ -6,6 +6,11 @@ const csv = require('csv');
 const inputDir = "./test/Dump";
 const outputDir = "./test/Production";
 
+// Check if ouput directory exists and create
+if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+}
+
 readCSV();
 
 function convertFiles(csvFile) {
