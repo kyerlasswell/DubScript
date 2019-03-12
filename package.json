@@ -1,5 +1,5 @@
 {
-  "name": "DubScript",
+  "name": "dubscript",
   "version": "1.0.0",
   "description": "Dubscript Automatically moves files from the dump folder to the production folder, renames, and converts them from .mp3 to .wav.",
   "main": "main.js",
@@ -7,8 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node ./scripts/DubScript.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./scripts/DubScript.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,8 @@
   "homepage": "https://github.com/jmbockhorst/DubScript#readme",
   "dependencies": {
     "csv": "^5.1.1",
-    "ffmpeg-static": "^2.4.0"
+    "ffmpeg-static": "^2.4.0",
+    "pdfreader": "^1.0.0"
   },
   "devDependencies": {
     "electron": "^4.0.8"
