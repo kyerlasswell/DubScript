@@ -2,12 +2,13 @@
 // So it'll need to be adjusted at some point. It's just a starting point pretty much.
 
 const { app, BrowserWindow } = require('electron')
+require('./scripts/DubScript');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({ width: 800, height: 600 })
 

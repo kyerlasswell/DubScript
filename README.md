@@ -46,7 +46,7 @@ The log will show you what files get overwritten since multiple files often want
 
 DubScript will take the `oldname.mp3` files from `test\Dump` and copy them to the `test\Production` as `newname.wav`. Delete all contents of the `test\Production` folder for each test.
 
-## JavaScript Usage
+## Electron App Usage
 
 ### Requirements
 * Node.js
@@ -54,7 +54,7 @@ DubScript will take the `oldname.mp3` files from `test\Dump` and copy them to th
 // Install dependencies
 npm install
 
-// Run the script
+// Start the electron app
 npm start
 ```
 
